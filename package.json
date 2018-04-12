@@ -1,8 +1,9 @@
 {
   "name": "kdan-react-video-player",
-  "version": "0.10.4",
+  "version": "1.0.0",
   "description": "this component fork on react-video",
   "contributors": [
+    "Roy Liou"
   ],
   "license": "MIT",
   "repository": {
