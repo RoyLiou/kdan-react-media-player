@@ -32,9 +32,6 @@ class VolumeBar extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  componentDidMount() {
-  }
-
   getPercent() {
     const { player } = this.props;
     if (player.muted) {
@@ -95,8 +92,8 @@ class VolumeBar extends Component {
 
   render() {
     const { player, className } = this.props;
-
     const volume = (player.volume * 100).toFixed(2);
+    
     return (
       <Slider
         ref={(c) => {
