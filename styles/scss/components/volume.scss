@@ -39,9 +39,9 @@
     }
 
     &.video-react-slider-vertical {
-      width: 0.3em;
-      height: 5em;
-      margin: 1.35em auto;
+      width: 4px;
+      height: 80px;
+      margin: 16px auto;
 
       .video-react-volume-level {
         height: 100%;
@@ -55,7 +55,7 @@
     bottom: 0;
     left: 0;
 
-    background-color: $video-react-primary-foreground-color;
+    background-color: $kdan-primary-color;
 
     @extend .video-react-icon;
     @extend .video-react-icon-circle;
@@ -63,19 +63,20 @@
     // Volume handle
     &:before {
       position: absolute;
-      font-size: 0.9em; // Doing this to match the handle on play progress.
+      font-size: 12px; // Doing this to match the handle on play progress.
+      color: $kdan-primary-color;
     }
   }
 
 
 
   .video-react-slider-vertical .video-react-volume-level {
-    width: 0.3em;
+    width: 3px;
 
     // Volume handle
     &:before {
-      top: -0.5em;
-      left: -0.3em;
+      top: -6px;
+      left: -4.5px;
     }
   }
 
@@ -104,11 +105,11 @@
   }
 
   .video-react-menu-button-popup.video-react-volume-menu-button-vertical .video-react-menu {
-    left: 0.5em;
-    height: 8em;
+    left: 8px;
+    height: 100px;
   }
   .video-react-menu-button-popup.video-react-volume-menu-button-horizontal .video-react-menu {
-    left: -2em;
+    left: -30px;
   }
 
   .video-react-menu-button-popup.video-react-volume-menu-button .video-react-menu-content {
@@ -123,9 +124,12 @@
   .video-react-volume-menu-button-vertical:hover .video-react-menu-content,
   .video-react-volume-menu-button-vertical:focus .video-react-menu-content,
   .video-react-volume-menu-button-vertical.video-react-slider-active .video-react-menu-content,
-  .video-react-volume-menu-button-vertical .video-react-lock-showing .video-react-menu-content {
-    height: 8em;
-    width: 2.9em;
+  .video-react-volume-menu-button-vertical.video-react-lock-showing .video-react-menu-content {
+    height: 110px;
+    width: 32px;
+    bottom: 22px;
+    border-radius: 3px;
+    right: inherit;
   }
 
   .video-react-volume-menu-button-horizontal:hover .video-react-menu-content,

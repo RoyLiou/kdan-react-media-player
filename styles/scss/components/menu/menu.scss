@@ -16,15 +16,13 @@
     overflow: auto;
     font-family: $video-react-text-font-family;
   }
-
   li {
     list-style: none;
     margin: 0;
-    padding: 0.2em 0;
-    line-height: 1.4em;
-    font-size: 1.2em;
-    text-align: center;
-    text-transform: lowercase;
+    padding: 8px 10px;
+    font-size: 14px;
+    font-weight: 300;
+    text-align: left;
 
     &:focus,
     &:hover {
@@ -36,8 +34,7 @@
     &.video-react-selected,
     &.video-react-selected:focus,
     &.video-react-selected:hover {
-      background-color: $video-react-primary-foreground-color;
-      color: $video-react-primary-background-color;
+      color: $kdan-primary-color;
     }
 
     &.vjs-menu-title {

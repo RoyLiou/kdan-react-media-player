@@ -2,12 +2,13 @@
 
   .video-react-time-control {
     @include flex(none);
-    font-size: 1em;
-    line-height: 3em;
-    min-width: 2em;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 35px;
+    min-width: 26px;
     width: auto;
-    padding-left: 1em;
-    padding-right: 1em;
+    padding-left: 12px;
+    padding-right: 12px;
   }
 
   .video-react-time-divider {

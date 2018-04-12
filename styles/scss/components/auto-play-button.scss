@@ -1,0 +1,30 @@
+.video-react {
+  .AutoPlayButton {
+    height: 6px;
+    width: 36px;
+    border-radius: 3px;
+    background-color: #999;
+    position: relative;
+    font-size: 20px;
+    right: 12px;
+
+    @extend .video-react-icon-fill-circle;
+    
+    &:before {
+      transition: left .5s;
+      position: absolute;
+      top: -8px;
+    }
+    &.on {
+      background-color: $kdan-primary-color;
+
+      &:before {
+        left: 16px;
+      }
+    }
+    &.off:before {
+      left: 0;
+    }
+  }
+
+}

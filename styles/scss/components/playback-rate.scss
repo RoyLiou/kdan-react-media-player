@@ -1,7 +1,8 @@
 .video-react {
   .video-react-playback-rate {
     .video-react-playback-rate-value {
-      line-height: 3em;
+      font-size: 14px;
+      line-height: 34px;
       text-align: center;
     }
 
@@ -9,5 +10,43 @@
       width: 4em;
       left: 0em;
     }
+  }
+
+  .PlayRateButton {
+    @extend .video-react-icon-right-mark;
+  }
+
+  .video-react-rate-menu {
+    display: none;
+    .title {
+      padding: 8px 0;
+      border-bottom: 1px #fff solid;
+      margin-bottom: 2px;
+      margin-left: 8px;
+      margin-right: 8px;
+    }
+    .video-react-menu {
+      .video-react-menu-content {
+        padding: 5px 10px;
+        overflow: visible;
+        width: 136px;
+        height: auto;
+        right: -96px;
+        bottom: -18px;
+
+        .video-react-selected {
+          &:after {
+            position: absolute;
+            right: 17px;
+            color: $kdan-primary-color;
+            @extend .video-react-icon-check-mark;
+          }
+        }
+      }
+    }
+  }
+
+  .video-react-rate-menu-active {
+    display: block;
   }
 }

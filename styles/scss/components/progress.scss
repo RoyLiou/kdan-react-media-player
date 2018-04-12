@@ -59,8 +59,14 @@
   }
 }
 
+.video-react .video-react-progress-control:hover .video-react-play-progress {
+  &:before {
+    top: -4px;
+  }
+}
+
 .video-react .video-react-play-progress {
-  background-color: $video-react-primary-foreground-color;
+  background-color: $kdan-primary-color;
   @extend .video-react-icon;
   @extend .video-react-icon-circle;
 
@@ -70,6 +76,7 @@
     top: -0.333333333333333em;
     right: -0.5em;
     font-size: 0.9em;
+    color: $kdan-primary-color;
   }
 }
 
