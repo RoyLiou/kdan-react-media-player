@@ -1,18 +1,13 @@
 {
-  "name": "video-react",
+  "name": "kdan-react-video-player",
   "version": "0.10.4",
-  "description": "Video-React is a web video player built from the ground up for an HTML5 world using React library.",
+  "description": "this component fork on react-video",
   "contributors": [
-    "Junmin Liu",
-    "Xincun Li",
-    "Jing Sun",
-    "Xiaolei Chen",
-    "Xiangkun Yang"
   ],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/video-react/video-react.git"
+    "url": "git+https://github.com/RoyLiou/video-react.git"
   },
   "main": "dist/index.js",
   "module": "dist/index.es.js",

@@ -1,6 +1,8 @@
 
-# video-react
+# kdan-react-video-player
 [![npm version](https://badge.fury.io/js/video-react.svg)](https://badge.fury.io/js/video-react) [![Build Status](https://travis-ci.org/video-react/video-react.svg?branch=master)](https://travis-ci.org/video-react/video-react) [![Package Quality](http://npm.packagequality.com/shield/video-react.svg)](http://packagequality.com/#?package=video-react)
+
+this component fork from [react-video](https://github.com/video-react/video-react)
 
 Video.React is a web video player built from the ground up for an HTML5 world using React library.
 
