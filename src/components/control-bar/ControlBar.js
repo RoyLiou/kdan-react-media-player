@@ -12,7 +12,7 @@ import CurrentTimeDisplay from '../time-controls/CurrentTimeDisplay';
 import DurationDisplay from '../time-controls/DurationDisplay';
 import TimeDivider from '../time-controls/TimeDivider';
 import VolumeMenuButton from './VolumeMenuButton';
-import PlaybackRateMenuButton from './PlaybackRateMenuButton';
+import SettingButton from './SettingButton';
 import { mergeAndSortChildren } from '../../utils';
 
 const propTypes = {
@@ -123,16 +123,15 @@ export default class ControlBar extends Component {
         key="remaining-time-display"
         order={9}
       />,
-      <PlaybackRateMenuButton
+      <SettingButton 
         {...this.props}
-        rates={[1, 1.25, 1.5, 2]}
-        key="playback-rate"
-        order={10}
+        key="setting"
+        order={11}
       />,
       <FullscreenToggle
         {...this.props}
         key="fullscreen-toggle"
-        order={11}
+        order={12}
       />
     ];
   }

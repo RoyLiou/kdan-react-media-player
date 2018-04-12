@@ -12,6 +12,9 @@ const propTypes = {
 
 const defaultProps = {
   rates: [2, 1.5, 1.25, 1, 0.5, 0.25],
+  player: {
+    playbackRate: 1
+  }
 };
 
 class PlaybackRateMenuButton extends Component {
@@ -46,7 +49,7 @@ class PlaybackRateMenuButton extends Component {
         items={items}
         selectedIndex={selectedIndex}
       >
-        <span className="video-react-control-text">Playback Rate</span>
+        <span className="video-react-control-text">Speed</span>
         <div className="video-react-playback-rate-value">{player.playbackRate.toFixed(2)}x</div>
       </MenuButton>
     );
