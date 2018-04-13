@@ -5,7 +5,6 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 3.0em;
 
   @include background-color-with-alpha($video-react-primary-background-color, $video-react-primary-background-transparency);
 }
