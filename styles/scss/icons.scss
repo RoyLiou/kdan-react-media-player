@@ -252,6 +252,7 @@ $icon-font-family: 'video-react';
 }
 .video-react-icon-fill-circle {
   &:before {
+    font-family: $video-react-icon-font-family;
     content: $video-react-icon-fill-circle;
   }
 }
