@@ -5,12 +5,12 @@
     border-radius: 3px;
     background-color: #999;
     position: relative;
-    font-size: 20px;
     right: 12px;
 
     @extend .video-react-icon-fill-circle;
     
     &:before {
+      font-size: 20px;
       transition: left .5s;
       position: absolute;
       top: -8px;
