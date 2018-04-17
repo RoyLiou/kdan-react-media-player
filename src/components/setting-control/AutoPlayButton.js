@@ -7,12 +7,7 @@ import ClickableComponent from '../ClickableComponent';
 const propTypes = {
   actions: PropTypes.object,
   className: PropTypes.string,
-  autoPlay: PropTypes.bool
 };
-
-const defaultProps = {
-  autoPlay: false
-}
 
 class AutoPlayButton extends Component {
   constructor(props, context) {
@@ -20,27 +15,25 @@ class AutoPlayButton extends Component {
 
     this.state = {
       active: false,
-      isloop: false
+      isloop: false,
     };
 
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick() {
-    const { actions, player } = this.props
-    const { isloop } = this.state
-    const videoEle = document.getElementsByClassName('video-react-video')[0]
+    const { actions, } = this.props;
+    const { isloop, } = this.state;
     
-    videoEle.loop = !isloop
-
+    actions.loop()
     this.setState({
-      isloop: !isloop
-    })
+      isloop: !isloop,
+    });
   }
 
   render () {
-    const { className } = this.props
-    const { isloop } = this.state
+    const { className, } = this.props;
+    const { isloop, } = this.state;
 
     return (
       <ClickableComponent
@@ -51,12 +44,11 @@ class AutoPlayButton extends Component {
         onClick={this.handleClick}
       >
       </ClickableComponent>
-    )
+    );
   }
 }
 
-AutoPlayButton.propTypes = propTypes
-AutoPlayButton.displayName = 'AutoPlayButton'
-AutoPlayButton.defaultProps = defaultProps
+AutoPlayButton.propTypes = propTypes;
+AutoPlayButton.displayName = 'AutoPlayButton';
 
-export default AutoPlayButton
+export default AutoPlayButton;

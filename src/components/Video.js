@@ -56,6 +56,7 @@ export default class Video extends Component {
     this.play = this.play.bind(this);
     this.pause = this.pause.bind(this);
     this.seek = this.seek.bind(this);
+    this.loop = this.loop.bind(this);
     this.forward = this.forward.bind(this);
     this.replay = this.replay.bind(this);
     this.toggleFullscreen = this.toggleFullscreen.bind(this);
@@ -169,6 +170,10 @@ export default class Video extends Component {
   // Change the video source and re-load the video:
   load() {
     this.video.load();
+  }
+
+  loop() {
+    this.video.loop = !this.video.loop
   }
 
   // Add a new text track to the video

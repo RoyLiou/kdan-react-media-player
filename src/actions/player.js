@@ -50,6 +50,18 @@ export function pause(operation = {
   };
 }
 
+export function loop(operation = {
+  action: 'loop',
+  source: ''
+}) {
+  this.video.loop();
+
+  return {
+    type: OPERATE,
+    operation
+  };
+}
+
 export function togglePlay(operation = {
   action: 'toggle-play',
   source: ''
