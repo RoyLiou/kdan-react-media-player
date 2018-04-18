@@ -63,10 +63,10 @@
     height: 100%;
   }
 
-
   // Playback technology elements expand to the width/height of the containing div
   // <video> or <object>
-  .video-react-video {
+  .video-react-video,
+  .video-react-audio {
     position: absolute;
     top: 0;
     left: 0;
@@ -85,6 +85,10 @@
     }
 
   }
+}
+
+.video-react-audio-wrapper {
+  background-color: #4A4A4A;
 }
 
 body.video-react-full-window {

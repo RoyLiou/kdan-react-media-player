@@ -2,6 +2,7 @@
 
 import Player from './components/Player';
 import Video from './components/Video';
+import Audio from './components/Audio';
 import BigPlayButton from './components/BigPlayButton';
 import LoadingSpinner from './components/LoadingSpinner';
 import PosterImage from './components/PosterImage';
@@ -37,6 +38,7 @@ import '../styles/scss/video-react.scss';
 export {
   Player,
   Video,
+  Audio,
   BigPlayButton,
   LoadingSpinner,
   PosterImage,

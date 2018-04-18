@@ -9,6 +9,13 @@
   @include background-color-with-alpha($video-react-primary-background-color, $video-react-primary-background-transparency);
 }
 
+.video-react-audio-wrapper .video-react-control-bar {
+  top: 0;
+  height: 36px;
+  margin: auto;
+  background-color: inherit;
+}
+
 // Video has started playing
 .video-react-has-started .video-react-control-bar {
   @include display-flex;
