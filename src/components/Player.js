@@ -191,7 +191,11 @@ export default class Player extends Component {
       aspectRatio = this.props.aspectRatio;
     } else if (player.videoWidth) {
       // Otherwise try to get the aspect ratio from the video metadata
-      aspectRatio = `${player.videoWidth}:${player.videoHeight}`;
+      if (player.videoWidth >= player.videoHeight) {
+        aspectRatio = `${player.videoWidth}:${player.videoHeight}`;
+      } else {
+        aspectRatio = `${player.videoHeight}:${player.videoWidth}`;
+      }
     } else {
       // Or use a default. The video element's is 2:1, but 16:9 is more common.
       aspectRatio = '16:9';
