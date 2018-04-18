@@ -1,7 +1,7 @@
 {
-  "name": "kdan-react-video-player",
-  "version": "1.0.5",
-  "description": "this component fork on react-video",
+  "name": "kdan-react-media-player",
+  "version": "1.0.8",
+  "description": "media player for kdanmobile.",
   "contributors": [
     "Roy Liou"
   ],

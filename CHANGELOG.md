@@ -169,7 +169,7 @@ Fixed issue #7. muted={false} not working
 ## [0.4.3](https://github.com/video-react/video-react/compare/0.4.2...v0.4.3) (2016-11-24)
 
 - Shortcut only works when the play has focus
-- Using `isVideoChild` prop to check if an element belongs to the Video.
+- Using `isMediaChild` prop to check if an element belongs to the Video.
 - Add documents for Customize
 - Add an example on how to support HLS video source
 
