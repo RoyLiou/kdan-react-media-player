@@ -42,10 +42,10 @@ export function formatTime(seconds = 0, guide = seconds) {
 
 // Check if the element belongs to a video element
 // only accept <source />, <track />,
-// <MyComponent isVideoChild />
+// <MyComponent isMediaChild />
 // elements
-export function isVideoChild(c) {
-  if (c.props && c.props.isVideoChild) {
+export function isMediaChild(c) {
+  if (c.props && c.props.isMediaChild) {
     return true;
   }
   return (c.type === 'source' || c.type === 'track');

@@ -10,7 +10,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-  position: 'left',
+  position: 'center',
 };
 
 export default class BigPlayButton extends Component {

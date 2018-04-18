@@ -8,16 +8,18 @@ import BigPlayButton from './BigPlayButton';
 import LoadingSpinner from './LoadingSpinner';
 import PosterImage from './PosterImage';
 import Video from './Video';
+import Audio from './Audio';
 import Bezel from './Bezel';
 import Shortcut from './Shortcut';
 import ControlBar from './control-bar/ControlBar';
 
 import * as browser from '../utils/browser';
-import { mergeAndSortChildren, isVideoChild, throttle } from '../utils';
+import { mergeAndSortChildren, isMediaChild, throttle } from '../utils';
 import fullscreen from '../utils/fullscreen';
 
 const propTypes = {
   children: PropTypes.any,
+  mediaType: PropTypes.string,
 
   width: PropTypes.number,
   height: PropTypes.number,
@@ -75,7 +77,7 @@ export default class Player extends Component {
 
     this.controlsHideTimer = null;
 
-    this.video = null; // the Video component
+    this.media = null; // the Video component
     this.manager = new Manager(props.store);
     this.actions = this.manager.getActions();
     this.manager.subscribeToPlayerStateChange(this.handleStateChange.bind(this));
@@ -109,13 +111,18 @@ export default class Player extends Component {
   }
 
   getDefaultChildren(props, fullProps) {
+    let MediaElememt = Video
+    if (props.mediaType === 'audio') {
+      MediaElememt = Audio
+    } 
+
     return [
-      <Video
+      <MediaElememt 
         ref={(c) => {
-          this.video = c;
-          this.manager.video = this.video;
+          this.media = c;
+          this.manager.media = this.media;
         }}
-        key="video"
+        key={props.mediaType}
         order={0.0}
         {...fullProps}
       />,
@@ -158,18 +165,24 @@ export default class Player extends Component {
       children: null
     };
     const children = React.Children.toArray(this.props.children)
-      .filter(e => (!isVideoChild(e)));
+      .filter(e => (!isMediaChild(e)));
     const defaultChildren = this.getDefaultChildren(propsWithoutChildren, props);
     return mergeAndSortChildren(defaultChildren, children, propsWithoutChildren);
   }
 
   getStyle() {
-    const { fluid } = this.props;
+    const { fluid, mediaType } = this.props;
     const { player } = this.manager.getState();
     const style = {};
     let width;
     let height;
     let aspectRatio;
+
+    if (mediaType === 'audio') {
+      return {
+        height: '140px',
+      }
+    }
 
     // The aspect ratio is either used directly or to calculate width and height.
     if (this.props.aspectRatio !== undefined
@@ -225,84 +238,84 @@ export default class Player extends Component {
 
   // get playback rate
   get playbackRate() {
-    return this.video.playbackRate;
+    return this.media.playbackRate;
   }
 
   // set playback rate
   // speed of video
   set playbackRate(rate) {
-    this.video.playbackRate = rate;
+    this.media.playbackRate = rate;
   }
 
   get muted() {
-    return this.video.muted;
+    return this.media.muted;
   }
 
   set muted(val) {
-    this.video.muted = val;
+    this.media.muted = val;
   }
 
   get volume() {
-    return this.video.volume;
+    return this.media.volume;
   }
 
   set volume(val) {
-    this.video.volume = val;
+    this.media.volume = val;
   }
 
   // video width
   get videoWidth() {
-    return this.video.videoWidth;
+    return this.media.videoWidth;
   }
 
   // video height
   get videoHeight() {
-    return this.video.videoHeight;
+    return this.media.videoHeight;
   }
 
   // play the video
   play() {
-    this.video.play();
+    this.media.play();
   }
 
   // pause the video
   pause() {
-    this.video.pause();
+    this.media.pause();
   }
 
   // Change the video source and re-load the video:
   load() {
-    this.video.load();
+    this.media.load();
   }
 
   // Add a new text track to the video
   addTextTrack(...args) {
-    this.video.addTextTrack(...args);
+    this.media.addTextTrack(...args);
   }
 
   // Check if your browser can play different types of video:
   canPlayType(...args) {
-    this.video.canPlayType(...args);
+    this.media.canPlayType(...args);
   }
 
   // seek video by time
   seek(time) {
-    this.video.seek(time);
+    this.media.seek(time);
   }
 
   // jump forward x seconds
   forward(seconds) {
-    this.video.forward(seconds);
+    this.media.forward(seconds);
   }
 
   // jump back x seconds
   replay(seconds) {
-    this.video.replay(seconds);
+    this.media.replay(seconds);
   }
 
   // enter or exist full screen
   toggleFullscreen() {
-    this.video.toggleFullscreen();
+    this.media.toggleFullscreen();
   }
 
   // subscribe to player state change
@@ -354,7 +367,7 @@ export default class Player extends Component {
   }
 
   render() {
-    const { fluid } = this.props;
+    const { fluid, mediaType } = this.props;
     const { player } = this.manager.getState();
     const { paused, hasStarted, waiting, seeking, isFullscreen, userActivity } = player;
 
@@ -364,7 +377,7 @@ export default class Player extends Component {
       actions: this.actions,
       manager: this.manager,
       store: this.manager.store,
-      video: this.video ? this.video.video : null,
+      video: this.media ? this.media.video : null,
     };
     const children = this.getChildren(props);
 
@@ -382,6 +395,7 @@ export default class Player extends Component {
           'video-react-user-inactive': !userActivity,
           'video-react-user-active': userActivity,
           'video-react-workinghover': !browser.IS_IOS,
+          'video-react-audio-wrapper': mediaType === 'audio',
         }, 'video-react', this.props.className)}
         style={this.getStyle()}
         ref={(c) => {

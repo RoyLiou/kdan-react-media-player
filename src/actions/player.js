@@ -30,7 +30,7 @@ export function play(operation = {
   action: 'play',
   source: ''
 }) {
-  this.video.play();
+  this.media.play();
 
   return {
     type: OPERATE,
@@ -42,7 +42,7 @@ export function pause(operation = {
   action: 'pause',
   source: ''
 }) {
-  this.video.pause();
+  this.media.pause();
 
   return {
     type: OPERATE,
@@ -54,7 +54,7 @@ export function loop(operation = {
   action: 'loop',
   source: ''
 }) {
-  this.video.loop();
+  this.media.loop();
 
   return {
     type: OPERATE,
@@ -66,7 +66,7 @@ export function togglePlay(operation = {
   action: 'toggle-play',
   source: ''
 }) {
-  this.video.togglePlay();
+  this.media.togglePlay();
 
   return {
     type: OPERATE,
@@ -79,7 +79,7 @@ export function seek(time, operation = {
   action: 'seek',
   source: ''
 }) {
-  this.video.seek(time);
+  this.media.seek(time);
 
   return {
     type: OPERATE,
@@ -92,7 +92,7 @@ export function forward(seconds, operation = {
   action: `forward-${seconds}`,
   source: ''
 }) {
-  this.video.forward(seconds);
+  this.media.forward(seconds);
 
   return {
     type: OPERATE,
@@ -105,7 +105,7 @@ export function replay(seconds, operation = {
   action: `replay-${seconds}`,
   source: ''
 }) {
-  this.video.replay(seconds);
+  this.media.replay(seconds);
 
   return {
     type: OPERATE,
@@ -117,7 +117,7 @@ export function changeRate(rate, operation = {
   action: 'change-rate',
   source: ''
 }) {
-  this.video.playbackRate = rate;
+  this.media.playbackRate = rate;
 
   return {
     type: OPERATE,
@@ -136,7 +136,7 @@ export function changeVolume(volume, operation = {
   if (volume > 1) {
     v = 1;
   }
-  this.video.volume = v;
+  this.media.volume = v;
 
   return {
     type: OPERATE,
@@ -148,7 +148,7 @@ export function mute(muted, operation = {
   action: muted ? 'muted' : 'unmuted',
   source: ''
 }) {
-  this.video.muted = muted;
+  this.media.muted = muted;
 
   return {
     type: OPERATE,

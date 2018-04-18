@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import classNames from 'classnames';
 
-import { isVideoChild, mediaProperties, throttle } from '../utils';
+import { isMediaChild, mediaProperties, throttle } from '../utils';
 
 const propTypes = {
   actions: PropTypes.object,
@@ -494,9 +494,9 @@ export default class Video extends Component {
       return null;
     }
 
-    // only keep <source />, <track />, <MyComponent isVideoChild /> elements
+    // only keep <source />, <track />, <MyComponent isMediaChild /> elements
     return React.Children.toArray(this.props.children)
-      .filter(isVideoChild)
+      .filter(isMediaChild)
       .map((c) => {
         let cprops;
         if (typeof c.type === 'string') {
