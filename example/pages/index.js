@@ -3,15 +3,16 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { PrismCode } from 'react-prism';
 import { Button, Container, Row, Col, Jumbotron } from 'reactstrap';
-import BasicExample from '../examples/import-basic';
+import VideoExample from '../examples/video-basic';
+import AudioExample from '../examples/audio-basic';
 
 // const importBasic = fs.readFileSync('../examples/import-basic', 'utf8');
 
 export default class extends Component {
   static async getInitialProps ({ query }) {
-    const response = await fetch(`http://localhost:9000/code/import-basic.js`)
-    const importBasic = await response.text()
-    return { importBasic }
+    const response = await fetch('http://localhost:9000/code/video-basic.js');
+    const importBasic = await response.text();
+    return { importBasic };
   }
 
   render() {
@@ -56,7 +57,10 @@ export default class extends Component {
               <h3>Basic example</h3>
               <p>The basic player</p>
               <div className="docs-example">
-                <BasicExample />
+                <VideoExample />
+              </div>
+              <div className="docs-example">
+                <AudioExample />
               </div>
               <p>import css in your app or add video-react styles in your page</p>
               <pre>
