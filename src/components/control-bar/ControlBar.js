@@ -68,11 +68,6 @@ export default class ControlBar extends Component {
         key="progress-control"
         order={6}
       />,
-      <FullscreenToggle
-        {...this.props}
-        key="fullscreen-toggle"
-        order={8}
-      />
     ];
   }
 
