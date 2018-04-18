@@ -13,7 +13,7 @@
   top: 0;
   height: 36px;
   margin: auto;
-  background-color: inherit;
+  background-color: transparent;
 }
 
 // Video has started playing
@@ -46,7 +46,7 @@
 }
 
 // Don't hide the control bar if it's audio
-.video-react-audio.video-react-has-started.video-react-user-inactive.video-react-playing .video-react-control-bar {
+.video-react-audio-wrapper.video-react-has-started.video-react-user-inactive.video-react-playing .video-react-control-bar {
   opacity: 1;
   visibility: visible;
 }
