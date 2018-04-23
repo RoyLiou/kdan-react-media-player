@@ -1,3 +1,51 @@
+@keyframes video-react-spinner-spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes video-react-spinner-spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes video-react-spinner-fade {
+  0% {
+    border-top-color: $video-react-secondary-background-color;
+  }
+  20% {
+    border-top-color: $video-react-secondary-background-color;
+  }
+  35% {
+    border-top-color: white;
+  }
+  60% {
+    border-top-color: $video-react-secondary-background-color;
+  }
+  100% {
+    border-top-color: $video-react-secondary-background-color;
+  }
+}
+
+@-webkit-keyframes video-react-spinner-fade {
+  0% {
+    border-top-color: $video-react-secondary-background-color;
+  }
+  20% {
+    border-top-color: $video-react-secondary-background-color;
+  }
+  35% {
+    border-top-color: white;
+  }
+  60% {
+    border-top-color: $video-react-secondary-background-color;
+  }
+  100% {
+    border-top-color: $video-react-secondary-background-color;
+  }
+}
+
 // loading-spinner css style
 .video-react .video-react-loading-spinner {
   display: none;
@@ -53,53 +101,3 @@
   -webkit-animation-delay: 0.44s;
   animation-delay: 0.44s;
 }
-
-@keyframes video-react-spinner-spin {
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@-webkit-keyframes video-react-spinner-spin {
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
-}
-
-@keyframes video-react-spinner-fade {
-  0% {
-    border-top-color: $video-react-secondary-background-color;
-  }
-  20% {
-    border-top-color: $video-react-secondary-background-color;
-  }
-  35% {
-    border-top-color: white;
-  }
-  60% {
-    border-top-color: $video-react-secondary-background-color;
-  }
-  100% {
-    border-top-color: $video-react-secondary-background-color;
-  }
-}
-
-@-webkit-keyframes video-react-spinner-fade {
-  0% {
-    border-top-color: $video-react-secondary-background-color;
-  }
-  20% {
-    border-top-color: $video-react-secondary-background-color;
-  }
-  35% {
-    border-top-color: white;
-  }
-  60% {
-    border-top-color: $video-react-secondary-background-color;
-  }
-  100% {
-    border-top-color: $video-react-secondary-background-color;
-  }
-}
-
-
