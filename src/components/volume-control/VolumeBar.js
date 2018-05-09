@@ -103,8 +103,6 @@ class VolumeBar extends Component {
         valuenow={volume}
         valuetext={`${volume}%`}
         onMouseMove={this.handleMouseMove}
-        onFocus={this.handleFocus}
-        onBlur={this.handleBlur}
         onClick={this.handleClick}
         sliderActive={this.handleFocus}
         sliderInactive={this.handleBlur}
