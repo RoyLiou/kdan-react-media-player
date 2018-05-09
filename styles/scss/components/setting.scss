@@ -13,20 +13,27 @@
   }
   
   .video-react-setting-button:hover>.video-react-menu,
-  .video-react-setting-button:focus>.video-react-menu,
+  // .video-react-setting-button:focus>.video-react-menu,
   .video-react-setting-active>.video-react-menu,
   .video-react-lock-showing>.video-react-menu {
     display: block;
   }
 
+  .video-react-menu-button-popup.video-react-setting-button .video-react-menu {
+    left: 0px;
+    height: 40px;
+    width: 100%;
+  }
+
   .video-react-setting-button:hover .video-react-menu-content,
-  .video-react-setting-button:focus .video-react-menu-content,
+  // .video-react-setting-button:focus .video-react-menu-content,
   .video-react-setting-active .video-react-menu-content,
   .video-react-lock-showing .video-react-menu-content {
     height: 100px;
     width: 180px;
     right: 0px;
     border-radius: 3px;
+    left: -100px;
   }
 
   .item-wrapper {

@@ -65,6 +65,7 @@ export default class ClickableComponent extends Component {
         onClick={this.handleClick}
         onFocus={this.handleFocus}
         onBlur={this.handleBlur}
+        onMouseLeave={this.handleBlur}
         {...props}
       />
     );
