@@ -1,5 +1,5 @@
 import React from 'react';
-import { Player, BigPlayButton, PlayToggle, ProgressControl, ControlBar, CurrentTimeDisplay, TimeDivider, DurationDisplay, VolumeMenuButton, SettingButton, FullscreenToggle } from 'video-react';
+import { Player, BigPlayButton, PlayToggle, ProgressControl, ControlBar, CurrentTimeDisplay, TimeDivider, DurationDisplay, VolumeMenuButton, SettingButton, FullscreenToggle } from 'kdan-react-media-player';
 
 export default () => {
   return (
@@ -7,7 +7,7 @@ export default () => {
       playsInline
       mediaType={'audio'}
     >
-      <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mp3" />
+      <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg" />
       <ControlBar>
         <PlayToggle order={1} />
         <ProgressControl order={2} />
