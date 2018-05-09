@@ -5,6 +5,8 @@ import classNames from 'classnames'
 import PopupButton from '../popup/PopupButton';
 import SettingBar from '../setting-control/SettingBar'
 
+import MobileDetect from 'mobile-detect';
+
 const propTypes = {
   player: PropTypes.object,
   className: PropTypes.string
@@ -16,20 +18,23 @@ class SettingButton extends Component {
 
     this.state = {
       active: false,
+      os: ''
     };
 
     this.handleClick = this.handleClick.bind(this);
-    this.handleFocus = this.handleFocus.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
   }
 
-  handleClick() {
-
+  componentDidMount () {
+    const md = new MobileDetect(window.navigator.userAgent);
+    this.setState({
+      os: md.os()
+    })
   }
 
-  handleFocus() {
+  handleClick() {
     this.setState({
-      active: true,
+      active: !this.state.active,
     });
   }
 
@@ -41,20 +46,21 @@ class SettingButton extends Component {
 
   render () {
     const { player, className } = this.props
+
     return (
+      this.state.os !== 'iOS' && this.state.os !== 'AndroidOS' ?
       <PopupButton
         className={classNames(className, {
           'video-react-setting-active': this.state.active,
           'video-react-lock-showing': this.state.active,
         },'video-react-setting-button')}
         onClick={this.handleClick}
+        onBlur={this.handleBlur}
         inline={false}>
         <SettingBar 
-          onFocus={this.handleFocus}
-          onBlur={this.handleBlur}
           {...this.props}
         />
-      </PopupButton>
+      </PopupButton> : ''
     )
   }
 }

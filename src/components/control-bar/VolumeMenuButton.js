@@ -5,6 +5,7 @@ import classNames from 'classnames';
 import PopupButton from '../popup/PopupButton';
 import VolumeBar from '../volume-control/VolumeBar';
 
+import MobileDetect from 'mobile-detect';
 
 const propTypes = {
   player: PropTypes.object,
@@ -26,22 +27,27 @@ class VolumeMenuButton extends Component {
 
     this.state = {
       active: false,
+      os: ''
     };
 
     this.handleClick = this.handleClick.bind(this);
-    this.handleFocus = this.handleFocus.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
+  }
+
+  componentDidMount () {
+    const md = new MobileDetect(window.navigator.userAgent);
+    this.setState({
+      os: md.os()
+    })
   }
 
   handleClick() {
     const { player, actions } = this.props;
     actions.mute(!player.muted);
-  }
 
-  handleFocus() {
-    this.setState({
-      active: true,
-    });
+    if (this.state.active) {
+      this.handleBlur()
+    }
   }
 
   handleBlur() {
@@ -68,6 +74,7 @@ class VolumeMenuButton extends Component {
     const inline = !vertical;
     const level = this.volumeLevel;
     return (
+      this.state.os !== 'iOS' && this.state.os !== 'AndroidOS' ?
       <PopupButton
         className={classNames(className, {
           'video-react-volume-menu-button-vertical': vertical,
@@ -77,18 +84,17 @@ class VolumeMenuButton extends Component {
           'video-react-vol-1': level === 1,
           'video-react-vol-2': level === 2,
           'video-react-vol-3': level === 3,
-          'video-react-slider-active': this.props.alwaysShowVolume || this.state.active,
-          'video-react-lock-showing': this.props.alwaysShowVolume || this.state.active,
+          'video-react-slider-active': this.state.active,
+          'video-react-lock-showing': this.state.active,
         }, 'video-react-volume-menu-button')}
         onClick={this.handleClick}
+        onBlur={this.handleBlur}
         inline={inline}
       >
         <VolumeBar
-          onFocus={this.handleFocus}
-          onBlur={this.handleBlur}
           {...this.props}
         />
-      </PopupButton>
+      </PopupButton> : ''
     );
   }
 }
