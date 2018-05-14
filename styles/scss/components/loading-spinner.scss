@@ -1,16 +1,16 @@
-@keyframes video-react-spinner-spin {
+@keyframes :global(video-react-spinner-spin) {
   100% {
     transform: rotate(360deg);
   }
 }
 
-@-webkit-keyframes video-react-spinner-spin {
+@-webkit-keyframes :global(video-react-spinner-spin) {
   100% {
     -webkit-transform: rotate(360deg);
   }
 }
 
-@keyframes video-react-spinner-fade {
+@keyframes :global(video-react-spinner-fade) {
   0% {
     border-top-color: $video-react-secondary-background-color;
   }
@@ -28,7 +28,7 @@
   }
 }
 
-@-webkit-keyframes video-react-spinner-fade {
+@-webkit-keyframes :global(video-react-spinner-fade) {
   0% {
     border-top-color: $video-react-secondary-background-color;
   }
