@@ -1,0 +1,17 @@
+.video-react {
+  .video-react-warning {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .warning-label::after {
+    content: '\2755';
+  }
+}

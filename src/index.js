@@ -9,6 +9,7 @@ import PosterImage from './components/PosterImage';
 import Slider from './components/Slider';
 import Bezel from './components/Bezel';
 import Shortcut from './components/Shortcut';
+import Warning from './components/Warning';
 
 import ControlBar from './components/control-bar/ControlBar';
 import PlayToggle from './components/control-bar/PlayToggle';
@@ -44,6 +45,7 @@ export {
   PosterImage,
   Bezel,
   Shortcut,
+  Warning,
   ControlBar,
   PlayToggle,
   ForwardControl,

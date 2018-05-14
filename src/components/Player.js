@@ -10,6 +10,7 @@ import PosterImage from './PosterImage';
 import Video from './Video';
 import Audio from './Audio';
 import Bezel from './Bezel';
+import Warning from './Warning';
 import Shortcut from './Shortcut';
 import ControlBar from './control-bar/ControlBar';
 
@@ -155,7 +156,12 @@ export default class Player extends Component {
         key="shortcut"
         order={99.0}
         {...props}
-      />
+      />,
+      <Warning 
+        key="warning"
+        order={99.0}
+        {...props}
+      />,
     ];
   }
 
