@@ -38,6 +38,7 @@ export default class extends Document {
           <link rel="stylesheet" href="/static/docs.css" />
           <link rel="stylesheet" href="/static/video-react.css" />
           <link rel="stylesheet" href="/static/prism.css" />
+          <link rel="stylesheet" href="/static/videojs.css" />
           <script src="/static/prism.js" data-manual></script>
         </Head>
         <body>
