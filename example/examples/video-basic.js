@@ -1,5 +1,5 @@
 import React from 'react';
-import { Player, BigPlayButton, PlayToggle, ProgressControl, ControlBar, CurrentTimeDisplay, TimeDivider, DurationDisplay, VolumeMenuButton, SettingButton, FullscreenToggle } from 'kdan-react-media-player';
+import { Player, BigPlayButton, Warning, PlayToggle, ProgressControl, ControlBar, CurrentTimeDisplay, TimeDivider, DurationDisplay, VolumeMenuButton, SettingButton, FullscreenToggle } from 'kdan-react-media-player';
 
 export default () => {
   return (
@@ -8,7 +8,8 @@ export default () => {
       mediaType={'video'}
     >
       <BigPlayButton />
-      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+      <Warning />
+      <source src="http://d2zihajmogu5jn.cloudfront.net/bipbop-advanced/bipbop_16x9_variant.m3u8" />
       <ControlBar>
         <PlayToggle order={1} />
         <ProgressControl order={2} />
