@@ -2,8 +2,8 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import classNames from 'classnames';
 
-import videojs from 'video.js'
-import 'video.js/dist/video-js.css'
+// import videojs from 'video.js'
+// import 'video.js/dist/video-js.css'
 
 import { isMediaChild, mediaProperties, throttle } from '../utils';
 
@@ -92,10 +92,10 @@ export default class Video extends Component {
   }
 
   componentDidMount() {
-    setTimeout(() => {
-      const player = videojs('video-player')
-      console.log(player)
-    }, 1000)
+    // setTimeout(() => {
+    //   const player = videojs('video-player')
+    //   console.log(player)
+    // }, 1000)
 
     this.forceUpdate(); // make sure the children can get the video property
   }
@@ -473,7 +473,7 @@ export default class Video extends Component {
   // during the loading of an audio/video
   handleError(...args) {
     const { actions, onError } = this.props;
-    actions.handleError(this.getProperties());
+    actions.handleError();
     if (onError) {
       onError(...args);
     }

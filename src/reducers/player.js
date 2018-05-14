@@ -20,6 +20,7 @@ const initialState = {
   seeking: false,
   paused: true,
   autoPaused: false,
+  error: '',
   ended: false,
   playbackRate: 1,
   muted: false,
@@ -125,7 +126,7 @@ export function player(state = initialState, action) {
       return {
         ...state,
         ...action.videoProps,
-        error: 'UNKNOWN ERROR',
+        error: 'the media stream can not play',
         ended: true
       };
     case DURATION_CHANGE:
