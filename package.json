@@ -1,6 +1,6 @@
 {
   "name": "kdan-react-media-player",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "media player for kdanmobile.",
   "contributors": [
     "Roy Liou"
@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
-    "babel-eslint": "^8.0.2",
+    "babel-eslint": "10.0.1",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
@@ -45,7 +45,7 @@
     "enzyme-adapter-react-16": "^1.14.0",
     "gh-pages": "^2.0.1",
     "hls.js": "^0.12.4",
-    "jest": "^24.8.0",
+    "jest": "24.7.1",
     "jest-cli": "^24.8.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",

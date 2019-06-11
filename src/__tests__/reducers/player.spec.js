@@ -20,6 +20,7 @@ describe('player', () => {
       seeking: false,
       paused: true,
       autoPaused: false,
+      error: '',
       ended: false,
       playbackRate: 1,
       muted: false,

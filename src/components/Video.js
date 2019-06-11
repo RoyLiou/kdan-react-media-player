@@ -95,7 +95,7 @@ export default class Video extends Component {
     } = this.props;
     const video = document.getElementById('video-player');
     
-    if (src.indexOf('.m3u8') >= 0) {
+    if (src && src.indexOf('.m3u8') >= 0) {
       if (Hls.isSupported()) {
         var hls = new Hls();
         hls.attachMedia(video);
