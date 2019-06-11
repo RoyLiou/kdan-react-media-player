@@ -1,9 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import classNames from 'classnames';
-
-// import videojs from 'video.js'
-// import 'video.js/dist/video-js.css'
+import Hls from 'hls.js';
 
 import { isMediaChild, mediaProperties, throttle } from '../utils';
 
@@ -92,10 +90,26 @@ export default class Video extends Component {
   }
 
   componentDidMount() {
-    // setTimeout(() => {
-    //   const player = videojs('video-player')
-    //   console.log(player)
-    // }, 1000)
+    const {
+      src,
+    } = this.props;
+    const video = document.getElementById('video-player');
+    
+    if (src.indexOf('.m3u8') >= 0) {
+      if (Hls.isSupported()) {
+        var hls = new Hls();
+        hls.attachMedia(video);
+        hls.on(Hls.Events.MEDIA_ATTACHED, function () {
+          hls.loadSource(src);
+          hls.on(Hls.Events.MANIFEST_PARSED, function (event, data) {
+          });
+        });
+      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = src;
+        video.addEventListener('loadedmetadata',function() {
+        });
+      }
+    }
 
     this.forceUpdate(); // make sure the children can get the video property
   }

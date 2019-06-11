@@ -28,7 +28,7 @@ class ComponentsLayout extends Component {
       navItems: [
         {
           name: 'Player',
-          to: '/components/player'
+          to: '/components/player',
         },
         {
           name: 'Shortcut',
@@ -44,15 +44,15 @@ class ComponentsLayout extends Component {
         },
         {
           name: 'LoadingSpinner',
-          to: '/components/loading-spinner'
+          to: '/components/loading-spinner',
         },
         {
           name: 'ControlBar',
-          to: '/components/control-bar'
+          to: '/components/control-bar',
         },
         {
           name: 'PlayToggle',
-          to: '/components/play-toggle'
+          to: '/components/play-toggle',
         },
         {
           name: 'ReplayControl',
@@ -70,7 +70,7 @@ class ComponentsLayout extends Component {
           name: 'PlaybackRateMenuButton',
           to: '/components/playback-rate-menu-button',
         },
-      ]
+      ],
     };
   }
   render() {
